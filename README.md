@@ -1,5 +1,7 @@
 # Netcode for Game Objects on Arbitrium
 
+![Add Edgegap dedicated game servers to Unity's 2D Space Shooter sample built with Netcode for GameObjects.](docs/images/card.jpg)
+
 This guide will help you create a headless server on Edgegap for a Unity project using [Netcode for GameObjects](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects) as its networking solution.
 
 In this guide, we will be using the open-source sample project `2DSpaceShooter` from [Unity bitesize samples](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/) as an example.
