@@ -9,6 +9,18 @@ using UnityEngine.Networking;
 public class QuitApplicationOnLastClientLeave : MonoBehaviour
 {
 
+#if UNITY_SERVER
+    // The component is not attached in network.unity, so add it to the NetworkManager at startup.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void AttachToNetworkManager()
+    {
+        var nm = NetworkManager.Singleton != null ? NetworkManager.Singleton : FindObjectOfType<NetworkManager>();
+        if (nm != null && nm.GetComponent<QuitApplicationOnLastClientLeave>() == null) {
+            nm.gameObject.AddComponent<QuitApplicationOnLastClientLeave>();
+        }
+    }
+#endif
+
     private NetworkManager networkManager;
 
     private void Awake()
